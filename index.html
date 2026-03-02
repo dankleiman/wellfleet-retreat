@@ -58,7 +58,7 @@
     .seasons{max-width:1040px;margin:0 auto;padding:64px 24px}
     .seasons-label{font-size:.62rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--deep-light);margin-bottom:6px;text-align:center}
     .seasons-heading{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.5rem,2.8vw,1.95rem);color:var(--deep);line-height:1.2;margin-bottom:28px;text-align:center}
-    .season-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    .season-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px}
     .season-card{background:var(--warm);border-radius:10px;padding:28px;position:relative;overflow:hidden;transition:transform .15s}
     .season-card:hover{transform:translateY(-2px)}
     .season-card.active{border:2px solid var(--accent)}
@@ -101,7 +101,8 @@
       .hero h1{font-size:2rem}
       .hero-ctas{flex-direction:column;align-items:center}
       .btn{width:100%;max-width:280px;justify-content:center}
-      .season-grid{grid-template-columns:1fr}
+      .season-grid{grid-template-columns:1fr 1fr}
+      .season-grid .season-card:last-child{grid-column:1/-1}
       .facts-grid{grid-template-columns:1fr 1fr}
     }
   </style>
@@ -111,8 +112,9 @@
   <nav class="nav"><div class="nav-inner">
     <a href="/" class="nav-brand">Wellfleet Retreat</a>
     <div class="nav-right" id="navMenu">
-      <a href="/summer/">Summer 2026</a>
-      <a href="#about">About</a>
+      <a href="/summer/">Summer</a>
+      <a href="/spring/">Spring</a>
+      <a href="/fall/">Fall</a>
       <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="nav-btn">Book Now</a>
     </div>
     <button class="mob-tog" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -158,23 +160,32 @@
           <p>Peak season on Indian Neck. Bay beach, deck dinners, oysters at sunset. This is the week your family talks about all year.</p>
           <a href="/summer/" class="season-link">View summer details →</a>
         </div>
-        <div class="season-card coming">
-          <span class="season-tag tag-soon">Coming Soon</span>
-          <h3 class="serif">Shoulder Season</h3>
-          <div class="months">May – June · Sept – Oct</div>
+        <div class="season-card active">
+          <span class="season-tag tag-live">Now Booking</span>
+          <h3 class="serif">Spring</h3>
+          <div class="months">April – May</div>
+          <div class="price">From $2,750/week</div>
+          <div class="price-note">Flexible dates · 7-night minimum · Cleaning included</div>
+          <p>Empty beaches. Bike trail season. The Outer Cape before the crowds arrive.</p>
+          <a href="/spring/" class="season-link">View spring details →</a>
+        </div>
+        <div class="season-card active">
+          <span class="season-tag tag-live">Now Booking</span>
+          <h3 class="serif">Fall</h3>
+          <div class="months">September – October</div>
           <div class="price">From $3,250/week</div>
-          <div class="price-note">Flexible dates available</div>
-          <p>The Cape without the crowds. Warm enough for the beach, quiet enough to hear yourself think. Perfect for couples and remote workers.</p>
-          <span class="season-link" style="color:var(--text-muted)">Details coming soon</span>
+          <div class="price-note">Flexible dates · 7-night minimum · Cleaning included</div>
+          <p>The Cape after it empties out. Golden light, warm water, quiet neighborhoods.</p>
+          <a href="/fall/" class="season-link">View fall details →</a>
         </div>
         <div class="season-card coming">
-          <span class="season-tag tag-soon">Coming Soon</span>
-          <h3 class="serif">Off-Season</h3>
-          <div class="months">November – April</div>
-          <div class="price">From $1,750/week</div>
-          <div class="price-note">Weekly or monthly stays</div>
-          <p>Winter walks on empty beaches. Writing retreats. A quiet place to work. The Outer Cape at its most peaceful — and most affordable.</p>
-          <span class="season-link" style="color:var(--text-muted)">Details coming soon</span>
+          <span class="season-tag tag-soon">Contact Us</span>
+          <h3 class="serif">Winter</h3>
+          <div class="months">November – March</div>
+          <div class="price" style="color:var(--text-muted);font-size:.9rem">Monthly stays</div>
+          <div class="price-note">&nbsp;</div>
+          <p>Writing retreats. Remote work. A quiet place to slow down. Ask about winter availability.</p>
+          <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="season-link">Contact Sarah →</a>
         </div>
       </div>
     </div>
