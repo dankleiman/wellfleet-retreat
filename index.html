@@ -121,7 +121,7 @@
       <a href="/summer/">Summer</a>
       <a href="/spring/">Spring</a>
       <a href="/fall/">Fall</a>
-      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="nav-btn">Book Now</a>
+      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="nav-btn" data-track="wnav-click">Book Now</a>
     </div>
     <button class="mob-tog" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div></nav>
@@ -135,7 +135,7 @@
       <p class="hero-specs">4 Bedrooms · 2 Baths · Sleeps 8–10 · Walk to Bay Beach</p>
       <div class="hero-ctas">
         <a href="#seasons" class="btn btn-accent">See Availability</a>
-        <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="btn btn-ghost">Book Direct Now</a>
+        <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="btn btn-ghost" data-track="wnav-click">Book Direct Now</a>
       </div>
     </div>
   </section>
@@ -191,7 +191,7 @@
           <div class="price" style="color:var(--text-muted);font-size:.9rem">Monthly stays</div>
           <div class="price-note">&nbsp;</div>
           <p>Writing retreats. Remote work. A quiet place to slow down. Ask about winter availability.</p>
-          <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="season-link">Contact Sarah →</a>
+          <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="season-link" data-track="wnav-click">Contact Sarah →</a>
         </div>
       </div>
     </div>
@@ -215,7 +215,7 @@
     <div class="book-inner">
       <h2 class="serif">Book Your Stay</h2>
       <p>Book direct with the owner — no platform fees.</p>
-      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="btn btn-accent">Check Availability on WNAV</a>
+      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="btn btn-accent" data-track="wnav-click">Check Availability on WNAV</a>
     </div>
   </section>
 
@@ -232,6 +232,9 @@
     document.querySelectorAll('#navMenu a').forEach(function(a){
       a.addEventListener('click',function(){document.getElementById('navMenu').classList.remove('open')});
     });
+    // TRACKING
+    // GA4 click_to_wnav event — delegated, fires on any WNAV link
+    document.addEventListener('click',function(e){var link=e.target.closest('[data-track="wnav-click"]');if(link&&typeof gtag==='function'){gtag('event','click_to_wnav',{event_category:'booking',event_label:window.location.pathname,value:1});}});
   </script>
 </body>
 </html>

@@ -271,7 +271,7 @@
     <div class="book-price">From $2,750<span style="font-size:.75rem;font-family:'Source Sans 3',sans-serif;font-weight:400;color:rgba(255,255,255,.5)">/week</span></div>
     <p class="book-price-note">Cleaning included · 14.45% MA tax applies</p>
     <div class="book-btns">
-      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" rel="noopener" class="bb bb-wnav" id="bookWnav">Book Direct With Owner</a>
+      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" rel="noopener" class="bb bb-wnav" id="bookWnav" data-track="wnav-click">Book Direct With Owner</a>
     </div>
     <p class="book-note">Questions? Contact Sarah directly through WeNeedaVacation.</p>
   </div></div></section>
@@ -337,11 +337,13 @@
     var stickyBar=document.getElementById('stickyBar'),heroH=document.querySelector('.hero').offsetHeight;
     window.addEventListener('scroll',function(){if(window.innerWidth<=768){stickyBar.style.display=window.scrollY>heroH?'block':'none'}});
 
-    // TRACKING — uncomment after adding your IDs
-    document.getElementById('bookWnav').addEventListener('click',function(){
-      // gtag('event','conversion',{send_to:'AW-XXXXXXXXX/WNAV_LABEL',value:2750,currency:'USD'});
-      // gtag('event','click_wnav',{event_category:'booking',event_label:'spring'});
-    });
+    // TRACKING
+    // GA4 click_to_wnav event — delegated, fires on any WNAV link
+    document.addEventListener('click',function(e){var link=e.target.closest('[data-track="wnav-click"]');if(link&&typeof gtag==='function'){gtag('event','click_to_wnav',{event_category:'booking',event_label:window.location.pathname,value:1});}});
+    // Google Ads conversion (uncomment after account setup):
+    // document.getElementById('bookWnav').addEventListener('click',function(){
+    //   gtag('event','conversion',{send_to:'AW-XXXXXXXXX/WNAV_LABEL',value:1,currency:'USD'});
+    // });
     var sf={};window.addEventListener('scroll',function(){var p=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);[25,50,75].forEach(function(m){if(p>=m&&!sf[m]){sf[m]=true;/*gtag('event','scroll_depth',{percent_scrolled:m});*/}})});
   </script>
 </body>
