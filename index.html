@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wellfleet Retreat — 4BR Vacation Rental on Indian Neck</title>
+  <title>Wellfleet Retreat — 4BR Vacation Rental on Indian Neck | Walk to Bay Beach</title>
   <meta name="description" content="4-bedroom vacation rental in Wellfleet's Indian Neck neighborhood. Walk to private bay beach. Sleeps 10. Book direct with the owner.">
   <meta property="og:title" content="Wellfleet Retreat — 4BR Vacation Rental on Indian Neck">
   <meta property="og:description" content="A mid-century modern home on a private acre of woods. Walk to the bay in 5 minutes. 4 bedrooms, sleeps 10.">
+  <meta property="og:image" content="https://wellfleetretreat.com/summer/photos/backyard_hammock.jpg">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,14 +23,12 @@
     :root{--warm:#F6F2EC;--warm-mid:#EDE7DC;--warm-dark:#D9CFBF;--deep:#1E3A42;--deep-mid:#2A5260;--deep-light:#3B7688;--accent:#BF7B45;--accent-hover:#D08E58;--accent-soft:rgba(191,123,69,0.1);--text:#2A2A2A;--text-mid:#4F4F4F;--text-light:#777;--text-muted:#A0A0A0;--white:#FFF;--border:rgba(0,0,0,0.06)}
     html{scroll-behavior:smooth}
     body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--text);background:var(--warm);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    img{display:block;max-width:100%}
-    .serif{font-family:'Playfair Display',Georgia,serif}
+    img{display:block;max-width:100%}.serif{font-family:'Playfair Display',Georgia,serif}
 
-    /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,242,236,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
     .nav-inner{max-width:1040px;margin:0 auto;padding:11px 24px;display:flex;justify-content:space-between;align-items:center}
     .nav-brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500;color:var(--deep);text-decoration:none}
-    .nav-right{display:flex;gap:20px;align-items:center}
+    .nav-right{display:flex;gap:22px;align-items:center}
     .nav-right a{font-size:.78rem;font-weight:500;color:var(--text-mid);text-decoration:none;transition:color .15s}
     .nav-right a:hover{color:var(--deep)}
     .nav-btn{background:var(--deep)!important;color:var(--white)!important;padding:6px 15px!important;border-radius:5px;font-weight:600!important}
@@ -37,35 +36,76 @@
     .mob-tog{display:none;background:none;border:none;cursor:pointer;padding:4px}
     .mob-tog span{display:block;width:18px;height:1.5px;background:var(--text);margin:4px 0;border-radius:1px}
 
-    /* HERO */
-    .hero{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;background:var(--deep);overflow:hidden;text-align:center}
+    .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;background:var(--deep);overflow:hidden}
     .hero-img{position:absolute;inset:0;background:url('summer/photos/backyard_hammock.jpg') center 38%/cover;opacity:0;animation:hR 1.3s ease .1s forwards}
-    .hero-img::after{content:'';position:absolute;inset:0;background:rgba(30,58,66,0.55)}
+    .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(175deg,rgba(30,58,66,0.05) 0%,rgba(30,58,66,.2) 30%,rgba(30,58,66,.6) 58%,rgba(30,58,66,.9) 100%)}
     @keyframes hR{to{opacity:1}}
-    .hero-body{position:relative;z-index:2;max-width:620px;padding:80px 24px 60px;opacity:0;transform:translateY(14px);animation:rI .55s ease .4s forwards}
+    .hero-body{position:relative;z-index:2;max-width:1040px;width:100%;margin:0 auto;padding:0 24px 52px;opacity:0;transform:translateY(14px);animation:rI .55s ease .4s forwards}
     @keyframes rI{to{opacity:1;transform:none}}
-    .hero h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--white);line-height:1.08;letter-spacing:-.02em;margin-bottom:16px}
-    .hero-desc{font-size:1.05rem;color:rgba(255,255,255,.75);font-weight:300;line-height:1.65;margin-bottom:8px}
-    .hero-specs{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:28px;letter-spacing:.01em}
-    .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.88rem;cursor:pointer;border:none;transition:background .15s,transform .1s}
-    .btn:hover{transform:translateY(-1px)}
-    .btn-accent{background:var(--accent);color:var(--white)}.btn-accent:hover{background:var(--accent-hover)}
-    .btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border:1px solid rgba(255,255,255,.2)}.btn-ghost:hover{background:rgba(255,255,255,.2)}
+    .hero h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(2rem,4.5vw,3rem);color:var(--white);line-height:1.1;letter-spacing:-.015em;max-width:560px;margin-bottom:14px}
+    .hero-desc{font-size:.98rem;color:rgba(255,255,255,.72);font-weight:300;max-width:440px;line-height:1.62;margin-bottom:24px}
+    .cta-pair{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .cta-main{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:var(--white);padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.88rem;border:none;cursor:pointer;transition:background .15s,transform .1s}
+    .cta-main:hover{background:var(--accent-hover);transform:translateY(-1px)}
+    .cta-main svg{width:14px;height:14px}
+    .cta-sec{color:rgba(255,255,255,.65);font-size:.85rem;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px}
+    .cta-sec:hover{color:var(--white)}
 
-    /* INTRO */
-    .intro{max-width:720px;margin:0 auto;padding:72px 24px;text-align:center}
-    .intro-label{font-size:.62rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--deep-light);margin-bottom:6px}
-    .intro h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.5rem,2.8vw,1.95rem);color:var(--deep);line-height:1.2;margin-bottom:18px}
-    .intro p{color:var(--text-mid);font-size:.95rem;line-height:1.75;margin-bottom:14px}
+    .specs{background:var(--deep);border-top:1px solid rgba(255,255,255,.06)}
+    .specs-inner{max-width:1040px;margin:0 auto;padding:14px 24px;display:flex;gap:24px;flex-wrap:wrap}
+    .sp{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.72);font-size:.8rem;font-weight:500}
+    .sp svg{width:15px;height:15px;color:var(--deep-light);flex-shrink:0;opacity:.85}
 
-    /* SEASONS */
-    .seasons-bg{background:var(--white)}
-    .seasons{max-width:1040px;margin:0 auto;padding:64px 24px}
-    .seasons-label{font-size:.62rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--deep-light);margin-bottom:6px;text-align:center}
-    .seasons-heading{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.5rem,2.8vw,1.95rem);color:var(--deep);line-height:1.2;margin-bottom:28px;text-align:center}
-    .season-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px}
-    .season-card{background:var(--warm);border-radius:10px;padding:28px;position:relative;overflow:hidden;transition:transform .15s}
+    .sec{max-width:1040px;margin:0 auto;padding:64px 24px}.sec-alt{background:var(--white)}
+    .sec-label{font-size:.62rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--deep-light);margin-bottom:6px}
+    .sec-heading{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.5rem,2.8vw,1.95rem);color:var(--deep);line-height:1.15;letter-spacing:-.01em;margin-bottom:18px}
+
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+    .about-prose p{color:var(--text-mid);font-size:.95rem;line-height:1.72;margin-bottom:16px}
+    .card{background:var(--warm-mid);border-radius:10px;padding:28px}
+    .card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:400;color:var(--deep);margin-bottom:18px}
+    .feat{display:flex;gap:12px;align-items:flex-start;margin-bottom:15px}.feat:last-child{margin-bottom:0}
+    .feat-icon{width:34px;height:34px;background:var(--white);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.05rem}
+    .feat strong{display:block;font-size:.85rem;color:var(--text);margin-bottom:1px}
+    .feat span{font-size:.78rem;color:var(--text-light);line-height:1.4}
+
+    .gal-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:200px 200px;gap:8px}
+    .gal-grid .gi:first-child{grid-row:1/3}
+    .gi{border-radius:6px;overflow:hidden;cursor:pointer;position:relative}
+    .gi img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+    .gi:hover img{transform:scale(1.025)}
+    .gi-overlay{position:absolute;inset:0;background:rgba(30,58,66,.45);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:600;font-size:.82rem;transition:background .2s;cursor:pointer}
+    .gi-overlay:hover{background:rgba(30,58,66,.55)}
+
+    .lb{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center}
+    .lb.open{display:flex}
+    .lb img{max-width:86vw;max-height:82vh;border-radius:5px;object-fit:contain}
+    .lb-x{position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(255,255,255,.7);font-size:1.6rem;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+    .lb-arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:none;color:white;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .lb-arr:hover{background:rgba(255,255,255,.2)}.lb-p{left:16px}.lb-n{right:16px}
+    .lb-ct{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:.75rem}
+
+    .am-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+    .am{display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--warm-mid);border-radius:6px;font-size:.82rem;font-weight:500;color:var(--text-mid)}
+    .am i{font-size:1rem;width:22px;text-align:center;flex-shrink:0;font-style:normal}
+
+    .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+    .dl{display:flex;flex-direction:column;gap:8px}
+    .dc{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--warm-mid);border-radius:8px}
+    .dc i{font-size:1.1rem;width:26px;text-align:center;font-style:normal}
+    .dc strong{display:block;font-size:.84rem;color:var(--text)}.dc span{font-size:.74rem;color:var(--text-light)}
+    .map-frame{border-radius:10px;overflow:hidden;height:360px;background:var(--warm-mid)}
+    .map-frame iframe{width:100%;height:100%;border:0}
+
+    .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .rev{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px}
+    .rev-stars{color:var(--accent);font-size:.78rem;margin-bottom:10px;letter-spacing:1.5px}
+    .rev blockquote{font-size:.9rem;color:var(--text-mid);line-height:1.7;font-style:italic;margin-bottom:14px}
+    .rev-who{font-size:.75rem;color:var(--text-muted);font-weight:500}
+    .rev-source{margin-top:20px;text-align:center;font-size:.75rem;color:var(--text-muted)}
+
+    .season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .season-card{background:var(--warm);border-radius:10px;padding:28px;border:1px solid var(--warm-dark);transition:transform .15s}
     .season-card:hover{transform:translateY(-2px)}
     .season-card.active{border:2px solid var(--accent)}
     .season-card.coming{opacity:.55}
@@ -74,47 +114,48 @@
     .tag-soon{background:var(--warm-mid);color:var(--text-muted)}
     .season-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:400;color:var(--deep);margin-bottom:6px}
     .season-card .months{font-size:.78rem;color:var(--text-muted);margin-bottom:10px}
-    .season-card .price{font-size:1.1rem;font-weight:600;color:var(--deep);margin-bottom:4px}
+    .season-card .price{font-size:1rem;font-weight:600;color:var(--deep);margin-bottom:4px}
     .season-card .price-note{font-size:.72rem;color:var(--text-muted);margin-bottom:14px}
     .season-card p{font-size:.82rem;color:var(--text-light);line-height:1.55;margin-bottom:16px}
     .season-link{font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none}
     .season-link:hover{text-decoration:underline}
 
-    /* QUICK FACTS */
-    .facts{max-width:1040px;margin:0 auto;padding:64px 24px}
-    .facts-heading{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.5rem,2.8vw,1.95rem);color:var(--deep);line-height:1.2;margin-bottom:24px;text-align:center}
-    .facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .fact{text-align:center;padding:20px 14px;background:var(--white);border-radius:10px}
-    .fact-icon{font-size:1.5rem;margin-bottom:8px}
-    .fact strong{display:block;font-size:.85rem;color:var(--text);margin-bottom:2px}
-    .fact span{font-size:.75rem;color:var(--text-light);line-height:1.4}
+    .faq-list{max-width:640px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--warm-dark)}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;user-select:none;font-weight:600;font-size:.87rem;color:var(--text-mid);background:none;border:none;width:100%;text-align:left;font-family:inherit;line-height:1.4}
+    .faq-q::after{content:'+';font-size:1.1rem;color:var(--text-muted);flex-shrink:0;margin-left:12px}
+    .faq-item.open .faq-q::after{content:'\2212'}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:.84rem;color:var(--text-light);line-height:1.65}
+    .faq-item.open .faq-a{max-height:220px;padding-bottom:16px}
 
-    /* BOOK BAR */
     .book-bar{background:var(--deep);color:var(--white);text-align:center}
     .book-inner{max-width:600px;margin:0 auto;padding:52px 24px}
     .book-inner h2{font-family:'Playfair Display',serif;font-weight:400;font-size:1.5rem;color:var(--white);margin-bottom:10px}
     .book-inner p{color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:24px}
 
-    /* FOOTER */
     .footer{padding:24px;text-align:center;font-size:.7rem;color:var(--text-muted);border-top:1px solid var(--border)}
     .footer a{color:var(--deep-light);text-decoration:none}
 
-    /* RESPONSIVE */
+    .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--white);border-top:1px solid rgba(0,0,0,.08);padding:10px 16px}
+    .sticky-inner{display:flex;justify-content:space-between;align-items:center;max-width:500px;margin:0 auto}
+    .sticky-price{font-size:.82rem;color:var(--text-mid)}.sticky-price b{font-size:1rem;color:var(--text)}
+    .sticky-go{background:var(--accent);color:var(--white);padding:9px 18px;border-radius:5px;text-decoration:none;font-weight:600;font-size:.82rem}
+
     @media(max-width:768px){
       .nav-right{display:none}.nav-right.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--warm);padding:14px 24px;gap:12px;border-bottom:1px solid var(--border)}
-      .mob-tog{display:block}
-      .hero{min-height:70vh}
-      .hero h1{font-size:2rem}
-      .hero-ctas{flex-direction:column;align-items:center}
-      .btn{width:100%;max-width:280px;justify-content:center}
+      .mob-tog{display:block}.hero{min-height:82vh}.hero h1{font-size:1.8rem}.specs-inner{gap:14px 20px}
+      .about-grid{grid-template-columns:1fr;gap:28px}
+      .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}
+      .gal-grid .gi:first-child{grid-row:1/2;grid-column:1/3;height:220px}
+      .loc-grid{grid-template-columns:1fr;gap:20px}.map-frame{height:260px}.rev-grid{grid-template-columns:1fr}
       .season-grid{grid-template-columns:1fr 1fr}
       .season-grid .season-card:last-child{grid-column:1/-1}
-      .facts-grid{grid-template-columns:1fr 1fr}
+      .sticky{display:block}.sec{padding:48px 20px}
     }
+    @media(max-width:480px){.am-grid{grid-template-columns:1fr 1fr;gap:6px}.sp{font-size:.74rem}}
   </style>
 </head>
 <body>
-
   <nav class="nav"><div class="nav-inner">
     <a href="/" class="nav-brand">Wellfleet Retreat</a>
     <div class="nav-right" id="navMenu">
@@ -132,90 +173,183 @@
     <div class="hero-body">
       <h1 class="serif">Wellfleet Retreat</h1>
       <p class="hero-desc">A mid-century modern home on a private acre of woods in the Indian Neck neighborhood — one of the quietest spots on the Outer Cape.</p>
-      <p class="hero-specs">4 Bedrooms · 2 Baths · Sleeps 8–10 · Walk to Bay Beach</p>
-      <div class="hero-ctas">
-        <a href="#seasons" class="btn btn-accent">See Availability</a>
-        <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="btn btn-ghost" data-track="wnav-click">Book Direct Now</a>
+      <div class="cta-pair">
+        <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="cta-main" data-track="wnav-click">Check Availability <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+        <a href="#photos" class="cta-sec">See the Property</a>
       </div>
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section id="about">
-    <div class="intro">
-      <div class="intro-label">The Property</div>
-      <h2 class="serif">Private Woods, Bay Beaches,<br>Outer Cape Charm</h2>
-      <p>The living room sits on the second floor with vaulted ceilings and floor-to-ceiling windows, surrounded by trees. Sliders open to a brand new deck that seats 8 — morning coffee, afternoon shade, dinner under the sky.</p>
-      <p>Walk 5 minutes to a private bay beach with views straight into the sunset. Burton Baker Beach is a 12-minute walk. Wellfleet Harbor, Wicked Oyster, and the National Seashore are all within 10 minutes by car.</p>
-      <p>We've been vacationing in Wellfleet with our three boys for 8 years. We bought this home in 2024 because Indian Neck is the place we always come back to.</p>
-    </div>
-  </section>
+  <!-- SPECS BAR -->
+  <div class="specs"><div class="specs-inner">
+    <div class="sp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>4 Bedrooms</div>
+    <div class="sp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>2 Baths</div>
+    <div class="sp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>Sleeps 8–10</div>
+    <div class="sp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>5-Min Walk to Beach</div>
+    <div class="sp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>Private Wooded Acre</div>
+  </div></div>
 
-  <!-- SEASONS -->
-  <section class="seasons-bg" id="seasons">
-    <div class="seasons">
-      <div class="seasons-label">Availability</div>
-      <div class="seasons-heading serif">Every Season on the Cape</div>
-      <div class="season-grid">
-        <div class="season-card active">
-          <span class="season-tag tag-live">Now Booking</span>
-          <h3 class="serif">Spring</h3>
-          <div class="months">April – May</div>
-          <div class="price">Weekly rentals</div>
-          <div class="price-note">Flexible dates · 7-night minimum · Cleaning included</div>
-          <p>Empty beaches. Bike trail season. The Outer Cape before the crowds arrive.</p>
-          <a href="/spring/" class="season-link">View spring details →</a>
-        </div>
-        <div class="season-card active">
-          <span class="season-tag tag-live">Now Booking</span>
-          <h3 class="serif">Summer</h3>
-          <div class="months">Late June – August</div>
-          <div class="price">Weekly rentals</div>
-          <div class="price-note">Sat–Sat · 7-night minimum · Cleaning included</div>
-          <p>Peak season on Indian Neck. Bay beach, deck dinners, oysters at sunset. This is the week your family talks about all year.</p>
-          <a href="/summer/" class="season-link">View summer details →</a>
-        </div>
-        <div class="season-card active">
-          <span class="season-tag tag-live">Now Booking</span>
-          <h3 class="serif">Fall</h3>
-          <div class="months">September – October</div>
-          <div class="price">Weekly rentals</div>
-          <div class="price-note">Flexible dates · 7-night minimum · Cleaning included</div>
-          <p>The Cape after it empties out. Golden light, warm water, quiet neighborhoods.</p>
-          <a href="/fall/" class="season-link">View fall details →</a>
-        </div>
-        <div class="season-card coming">
-          <span class="season-tag tag-soon">Contact Us</span>
-          <h3 class="serif">Winter</h3>
-          <div class="months">November – March</div>
-          <div class="price" style="color:var(--text-muted);font-size:.9rem">Monthly stays</div>
-          <div class="price-note">&nbsp;</div>
-          <p>Writing retreats. Remote work. A quiet place to slow down. Ask about winter availability.</p>
-          <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="season-link" data-track="wnav-click">Contact Sarah →</a>
-        </div>
+  <!-- ABOUT -->
+  <section id="about"><div class="sec">
+    <div class="sec-label">The Property</div>
+    <div class="sec-heading serif">Quiet Woods, Private Beach,<br>Outer Cape Character</div>
+    <div class="about-grid">
+      <div class="about-prose">
+        <p>This isn't a typical Cape Cod rental. It's a mid-century modern home set back on a private acre of woods in Wellfleet's Indian Neck neighborhood — one of the quietest and most sought-after spots on the Outer Cape.</p>
+        <p>The living room sits on the second floor with vaulted ceilings and floor-to-ceiling windows, surrounded by trees. Sliders open to a brand new deck that seats 8 — this is where your vacation happens. Morning coffee. Afternoon shade. Dinner under the sky.</p>
+        <p>Walk 5 minutes and you're at a private bay beach with views straight into the sunset. Burton Baker Beach is a 12-minute walk. The kids disappear into the woods and the yard. The hammock is waiting.</p>
+        <p>We've been vacationing in Wellfleet with our three boys for 8 years. We bought this home in 2024 because Indian Neck is the place we always come back to.</p>
+        <p>Located in one of Wellfleet&#8217;s most sought-after neighborhoods, the home is close to town, close to the bay, and set back enough to feel private &#8212; even in peak season.</p>
+      </div>
+      <div class="card">
+        <h3 class="serif">Why This Property</h3>
+        <div class="feat"><div class="feat-icon">🏖</div><div><strong>Private Beach Access</strong><span>0.25 mi to private bay beach. Burton Baker 0.7 mi. Both walkable — no car needed.</span></div></div>
+        <div class="feat"><div class="feat-icon">🌅</div><div><strong>Bay Sunsets</strong><span>Indian Neck faces west across the bay. The sunsets are why people come back year after year.</span></div></div>
+        <div class="feat"><div class="feat-icon">🌲</div><div><strong>Private Wooded Acre</strong><span>Long driveway, set back from a quiet street. Kids run free. You hear birds, not traffic.</span></div></div>
+        <div class="feat"><div class="feat-icon">🍽</div><div><strong>New Deck</strong><span>Brand new deck with full dining setup, seats 8.</span></div></div>
+        <div class="feat"><div class="feat-icon">👨‍👩‍👧‍👦</div><div><strong>Room for Everyone</strong><span>Queen upstairs, 3 bedrooms + bunks downstairs. Queen sofa bed in living room. 2 full baths.</span></div></div>
       </div>
     </div>
-  </section>
+  </div></section>
 
-  <!-- QUICK FACTS -->
-  <section>
-    <div class="facts">
-      <div class="facts-heading serif">At a Glance</div>
-      <div class="facts-grid">
-        <div class="fact"><div class="fact-icon">🏖</div><strong>Private Bay Beach</strong><span>5-min walk · 0.25 mi</span></div>
-        <div class="fact"><div class="fact-icon">🌲</div><strong>Private Wooded Acre</strong><span>Long driveway · Quiet street</span></div>
-        <div class="fact"><div class="fact-icon">🍽</div><strong>New Deck</strong><span>Seats 8 · BBQ grill</span></div>
-        <div class="fact"><div class="fact-icon">👨‍👩‍👧‍👦</div><strong>Room for Everyone</strong><span>4BR · 2BA · Bunks for kids</span></div>
+  <!-- PHOTOS -->
+  <section class="sec-alt" id="photos"><div class="sec">
+    <div class="sec-label">Photos</div>
+    <div class="sec-heading serif">See the Property</div>
+    <div class="gal-grid">
+      <div class="gi" data-i="0"><img src="summer/photos/deck.jpg" alt="Brand new deck with seating for 8" loading="lazy"></div>
+      <div class="gi" data-i="1"><img src="summer/photos/living_dining_wide.jpg" alt="Open living and dining area with vaulted ceiling" loading="lazy"></div>
+      <div class="gi" data-i="2"><img src="summer/photos/dining_1.jpg" alt="Dining area" loading="lazy"></div>
+      <div class="gi" data-i="3"><img src="summer/photos/master_bed.jpg" alt="Queen bedroom" loading="lazy"></div>
+      <div class="gi" data-i="4"><img src="summer/photos/sunset_1.jpg" alt="Bay sunset from Indian Neck" loading="lazy"><div class="gi-overlay" id="viewAllBtn">View all photos</div></div>
+    </div>
+  </div></section>
+
+  <div class="lb" id="lb">
+    <button class="lb-x" id="lbClose">&times;</button>
+    <button class="lb-arr lb-p" id="lbPrev">&#8249;</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-arr lb-n" id="lbNext">&#8250;</button>
+    <div class="lb-ct" id="lbCt"></div>
+  </div>
+
+  <!-- AMENITIES -->
+  <section><div class="sec">
+    <div class="sec-label">Amenities</div>
+    <div class="sec-heading serif">What's Included</div>
+    <div class="am-grid">
+      <div class="am"><i>🏖</i> 5-minute walk to calm bay beaches</div>
+      <div class="am"><i>🛏</i> 4-bedroom layout with space for extended family</div>
+      <div class="am"><i>🪑</i> Large deck for outdoor dining</div>
+      <div class="am"><i>🌲</i> Private wooded acre</div>
+      <div class="am"><i>🚿</i> Outdoor shower</div>
+      <div class="am"><i>❄️</i> AC and ceiling fans</div>
+      <div class="am"><i>👕</i> Washer and dryer for full-week stays</div>
+      <div class="am"><i>🅿️</i> Driveway parking</div>
+      <div class="am"><i>📶</i> Fast WiFi for extended stays</div>
+      <div class="am"><i>🚴</i> Bike-friendly neighborhood roads</div>
+    </div>
+  </div></section>
+
+  <!-- LOCATION -->
+  <section class="sec-alt" id="location"><div class="sec">
+    <div class="sec-label">Location</div>
+    <div class="sec-heading serif">Indian Neck, Wellfleet</div>
+    <div class="loc-grid">
+      <div class="dl">
+        <div class="dc"><i>🏖</i><div><strong>Private Bay Beach</strong><span>5 min walk · 0.25 mi</span></div></div>
+        <div class="dc"><i>🏖</i><div><strong>Burton Baker Beach</strong><span>12 min walk · 0.7 mi</span></div></div>
+        <div class="dc"><i>⛵</i><div><strong>Wellfleet Harbor</strong><span>5 min drive</span></div></div>
+        <div class="dc"><i>🦪</i><div><strong>Wicked Oyster</strong><span>5 min drive</span></div></div>
+        <div class="dc"><i>🍸</i><div><strong>The Pearl</strong><span>5 min drive</span></div></div>
+        <div class="dc"><i>🥐</i><div><strong>PB Boulangerie</strong><span>5 min drive</span></div></div>
+        <div class="dc"><i>🎬</i><div><strong>Wellfleet Drive-In</strong><span>8 min drive</span></div></div>
+        <div class="dc"><i>🌊</i><div><strong>National Seashore Beaches</strong><span>10 min drive</span></div></div>
+        <div class="dc"><i>🛶</i><div><strong>Gull Pond (Kayaking)</strong><span>8 min drive</span></div></div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11890!2d-70.025!3d41.913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-  </section>
+  </div></section>
+
+  <!-- REVIEWS -->
+  <section id="reviews"><div class="sec">
+    <div class="sec-label">Guest Reviews</div>
+    <div class="sec-heading serif">What Guests Say</div>
+    <div class="rev-grid">
+      <div class="rev"><div class="rev-stars">★★★★★</div><blockquote>"Our family had a great time in this wonderful hideaway in woods, just a short walk from a beautiful bay beach on Indian Neck. The large deck off the second floor is a great addition."</blockquote><div class="rev-who">David C. — August 2025</div></div>
+      <div class="rev"><div class="rev-stars">★★★★★</div><blockquote>"The house is in a great location within a short walk to a beautiful quiet beach on the bay side, which is great for kids. It has a large, comfortable open living area and a nice large deck."</blockquote><div class="rev-who">Margaret D. — June 2025</div></div>
+    </div>
+    <div class="rev-source">Reviews from WeNeedaVacation.com · 5.0 average</div>
+  </div></section>
+
+  <!-- SEASONS CARDS -->
+  <section class="sec-alt" id="seasons"><div class="sec">
+    <div class="sec-label">Availability</div>
+    <div class="sec-heading serif">Every Season on the Cape</div>
+    <div class="season-grid">
+      <div class="season-card active">
+        <span class="season-tag tag-live">Now Booking</span>
+        <h3 class="serif">Spring</h3>
+        <div class="months">April – May</div>
+        <div class="price">Weekly rentals</div>
+        <div class="price-note">Flexible dates · 7-night minimum · Cleaning included</div>
+        <p>Empty beaches. Bike trail season. The Outer Cape before the crowds arrive.</p>
+        <a href="/spring/" class="season-link">View spring details →</a>
+      </div>
+      <div class="season-card active">
+        <span class="season-tag tag-live">Now Booking</span>
+        <h3 class="serif">Summer</h3>
+        <div class="months">Late June – August</div>
+        <div class="price">Weekly rentals</div>
+        <div class="price-note">Sat–Sat · 7-night minimum · Cleaning included</div>
+        <p>Peak season on Indian Neck. Bay beach, deck dinners, oysters at sunset. This is the week your family talks about all year.</p>
+        <a href="/summer/" class="season-link">View summer details →</a>
+      </div>
+      <div class="season-card active">
+        <span class="season-tag tag-live">Now Booking</span>
+        <h3 class="serif">Fall</h3>
+        <div class="months">September – October</div>
+        <div class="price">Weekly rentals</div>
+        <div class="price-note">Flexible dates · 7-night minimum · Cleaning included</div>
+        <p>The Cape after it empties out. Golden light, warm water, quiet neighborhoods.</p>
+        <a href="/fall/" class="season-link">View fall details →</a>
+      </div>
+      <div class="season-card coming">
+        <span class="season-tag tag-soon">Contact Us</span>
+        <h3 class="serif">Winter</h3>
+        <div class="months">November – March</div>
+        <div class="price" style="color:var(--text-muted);font-size:.9rem">Monthly stays</div>
+        <div class="price-note">&nbsp;</div>
+        <p>Writing retreats. Remote work. A quiet place to slow down. Ask about winter availability.</p>
+        <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="season-link" data-track="wnav-click">Contact Sarah →</a>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- FAQ -->
+  <section><div class="sec">
+    <div class="sec-label">Details</div>
+    <div class="sec-heading serif">Common Questions</div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q">What are the check-in days?</button><div class="faq-a">Summer is Saturday to Saturday (late June through Labor Day). Spring and fall have flexible start days — not necessarily Saturday. 7-night minimum for all stays. Contact Sarah through WNAV to confirm your preferred dates.</div></div>
+      <div class="faq-item"><button class="faq-q">How many people can the house sleep?</button><div class="faq-a">8 comfortably, up to 10 with the queen sofa bed. There's a queen upstairs, plus 3 bedrooms downstairs: a double, a double, and a bunk room with a full and twin.</div></div>
+      <div class="faq-item"><button class="faq-q">Is the cleaning fee included?</button><div class="faq-a">Yes, cleaning is included in the weekly rate. Massachusetts state and local tax of 14.45% applies to all stays.</div></div>
+      <div class="faq-item"><button class="faq-q">Are pets allowed?</button><div class="faq-a">No pets, sorry. The property is not pet-friendly.</div></div>
+      <div class="faq-item"><button class="faq-q">Is there air conditioning?</button><div class="faq-a">Yes — there are A/C units in the home. Plus ceiling fans and an outdoor shower for cooling off after the beach.</div></div>
+      <div class="faq-item"><button class="faq-q">How far is the beach?</button><div class="faq-a">The private bay beach is a 5-minute walk (0.25 mi). Burton Baker Beach is a 12-minute walk (0.7 mi). No car needed for either.</div></div>
+      <div class="faq-item"><button class="faq-q">Is there parking?</button><div class="faq-a">Yes — free parking on the property with a long private driveway.</div></div>
+      <div class="faq-item"><button class="faq-q">What's nearby?</button><div class="faq-a">Wellfleet Harbor, Wicked Oyster, and The Pearl are a 5-minute drive. The Wellfleet Drive-In is 8 minutes. National Seashore ocean beaches are 10 minutes. PB Boulangerie and Gull Pond are close by too.</div></div>
+    </div>
+  </div></section>
 
   <!-- BOOK BAR -->
-  <section class="book-bar">
+  <section class="book-bar" id="book">
     <div class="book-inner">
       <h2 class="serif">Book Your Stay</h2>
       <p>Book direct with the owner — no platform fees.</p>
-      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="btn btn-accent" data-track="wnav-click">Check Availability on WNAV</a>
+      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="cta-main" data-track="wnav-click">Check Availability on WNAV <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
     </div>
   </section>
 
@@ -225,13 +359,49 @@
     <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank">WNAV ID 39676</a>
   </footer>
 
+  <!-- STICKY MOBILE BAR -->
+  <div class="sticky" id="stickyBar"><div class="sticky-inner">
+    <div class="sticky-price"><b>4BR</b> · Walk to Bay Beach</div>
+    <a href="#book" class="sticky-go">Check Availability</a>
+  </div></div>
+
   <script>
-    document.getElementById('mobileToggle').addEventListener('click',function(){
-      document.getElementById('navMenu').classList.toggle('open');
-    });
-    document.querySelectorAll('#navMenu a').forEach(function(a){
-      a.addEventListener('click',function(){document.getElementById('navMenu').classList.remove('open')});
-    });
+    document.getElementById('mobileToggle').addEventListener('click',function(){document.getElementById('navMenu').classList.toggle('open')});
+    document.querySelectorAll('#navMenu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navMenu').classList.remove('open')})});
+    document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var i=this.parentElement,w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(x){x.classList.remove('open')});if(!w)i.classList.add('open')})});
+
+    var photos=[
+      {src:'summer/photos/deck.jpg',alt:'Brand new deck with seating for 8'},
+      {src:'summer/photos/living_dining_wide.jpg',alt:'Open living and dining with vaulted ceiling'},
+      {src:'summer/photos/living_room.jpg',alt:'Living room seating area'},
+      {src:'summer/photos/backyard_hammock.jpg',alt:'Private wooded backyard with hammock'},
+      {src:'summer/photos/dining_1.jpg',alt:'Dining area'},
+      {src:'summer/photos/dining_2.jpg',alt:'Kitchen and dining'},
+      {src:'summer/photos/master_bed.jpg',alt:'Master bedroom'},
+      {src:'summer/photos/bed_2.jpg',alt:'Bedroom 2'},
+      {src:'summer/photos/bed_3.jpg',alt:'Bedroom 3'},
+      {src:'summer/photos/bunk_bed.jpg',alt:'Bunk room'},
+      {src:'summer/photos/bath_1.jpg',alt:'Bathroom'},
+      {src:'summer/photos/bath_2.jpg',alt:'Second bathroom'},
+      {src:'summer/photos/porch_under.jpg',alt:'Lower porch and yard'},
+      {src:'summer/photos/front_entry.jpg',alt:'Front of house'},
+      {src:'summer/photos/sunset_1.jpg',alt:'Sunset over the bay'},
+      {src:'summer/photos/sunset_2.jpg',alt:'Bay sunset from Indian Neck'}
+    ];
+    var lbIdx=0,lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCt=document.getElementById('lbCt');
+    function openLb(i){lbIdx=i;lbImg.src=photos[i].src;lbImg.alt=photos[i].alt;lbCt.textContent=(i+1)+' / '+photos.length;lb.classList.add('open');document.body.style.overflow='hidden'}
+    function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+    document.querySelectorAll('.gi').forEach(function(el){el.addEventListener('click',function(){openLb(parseInt(this.dataset.i||0))})});
+    document.getElementById('viewAllBtn').addEventListener('click',function(e){e.stopPropagation();openLb(0)});
+    document.getElementById('lbClose').addEventListener('click',closeLb);
+    document.getElementById('lbPrev').addEventListener('click',function(){openLb((lbIdx-1+photos.length)%photos.length)});
+    document.getElementById('lbNext').addEventListener('click',function(){openLb((lbIdx+1)%photos.length)});
+    lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+    document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')openLb((lbIdx-1+photos.length)%photos.length);if(e.key==='ArrowRight')openLb((lbIdx+1)%photos.length)});
+
+    var stickyBar=document.getElementById('stickyBar'),heroH=document.querySelector('.hero').offsetHeight;
+    window.addEventListener('scroll',function(){if(window.innerWidth<=768){stickyBar.style.display=window.scrollY>heroH?'block':'none'}});
+
     // TRACKING
     // GA4 click_to_wnav event — delegated, fires on any WNAV link
     document.addEventListener('click',function(e){var link=e.target.closest('[data-track="wnav-click"]');if(link&&typeof gtag==='function'){gtag('event','click_to_wnav',{event_category:'booking',event_label:window.location.pathname,value:1});}});
