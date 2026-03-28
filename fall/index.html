@@ -122,6 +122,14 @@
       .sticky{display:block}.sec{padding:48px 20px}
       .photo-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:6px;padding-bottom:4px}.photo-strip a{flex:0 0 72vw;scroll-snap-align:start}.why-grid{grid-template-columns:1fr}
     }
+    .signup-compact{max-width:440px;margin:0 auto;padding:32px 24px 40px;text-align:center;border-top:1px solid var(--border)}
+    .signup-compact>p{color:var(--text-mid);font-size:.88rem;margin-bottom:14px}
+    .signup-form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+    .signup-form input[type="email"]{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:6px;padding:12px 16px;font-size:.88rem;font-family:inherit;color:var(--text);width:220px;max-width:100%;outline:none}
+    .signup-form input[type="email"]:focus{border-color:var(--accent)}
+    .signup-form button{background:var(--accent);color:var(--white);border:none;border-radius:6px;padding:12px 20px;font-weight:600;font-size:.88rem;font-family:inherit;cursor:pointer;transition:background .15s,transform .1s;white-space:nowrap}
+    .signup-form button:hover{background:var(--accent-hover);transform:translateY(-1px)}
+    @media(max-width:600px){.signup-form{flex-direction:column;align-items:stretch;max-width:300px;margin-left:auto;margin-right:auto}.signup-form input[type="email"]{width:100%}}
   </style>
 </head>
 <body>
@@ -200,6 +208,20 @@
     <p>See the full property — <a href="/">photos, amenities, reviews, and location details.</a></p>
   </div></section>
 
+  <!-- EMAIL SIGNUP -->
+  <div class="signup-compact">
+    <p>Not ready to book? Get notified when new dates open.</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/wellfleetretreat"
+      method="post"
+      class="signup-form"
+    >
+      <input type="email" name="email" placeholder="Your email" required />
+      <input type="hidden" name="tag" value="fall" />
+      <button type="submit">Notify me</button>
+    </form>
+  </div>
+
   <footer class="footer">&copy; 2026 Wellfleet Retreat · Wellfleet, MA · <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank">WNAV ID 39676</a></footer>
 
   <div class="lb" id="lb" role="dialog" aria-modal="true">
@@ -224,6 +246,8 @@
     // TRACKING
     // GA4 click_to_wnav event — delegated, fires on any WNAV link
     document.addEventListener('click',function(e){var link=e.target.closest('[data-track="wnav-click"]');if(link&&typeof gtag==='function'){gtag('event','click_to_wnav',{event_category:'booking',event_label:window.location.pathname,value:1});}});
+    // Email signup — delegated, handles all .signup-form submissions
+    document.addEventListener('submit',function(e){var form=e.target.closest('.signup-form');if(!form)return;e.preventDefault();var email=form.querySelector('input[type="email"]').value;var tag=form.querySelector('input[name="tag"]')?form.querySelector('input[name="tag"]').value:'';var btn=form.querySelector('button');var originalText=btn.textContent;btn.textContent='Sending...';btn.disabled=true;fetch('https://buttondown.com/api/emails/embed-subscribe/wellfleetretreat',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'email='+encodeURIComponent(email)+'&tag='+encodeURIComponent(tag),mode:'no-cors'}).then(function(){btn.textContent='You\'re on the list!';form.querySelector('input[type="email"]').style.display='none';if(typeof gtag==='function'){gtag('event','email_signup',{event_category:'engagement',event_label:window.location.pathname});}}).catch(function(){btn.textContent=originalText;btn.disabled=false;});});
     // Google Ads conversion (uncomment after account setup):
     // document.getElementById('bookWnav').addEventListener('click',function(){
     //   gtag('event','conversion',{send_to:'AW-XXXXXXXXX/WNAV_LABEL',value:1.2,currency:'USD'});

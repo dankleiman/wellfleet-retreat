@@ -128,12 +128,7 @@
     .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:.84rem;color:var(--text-light);line-height:1.65}
     .faq-item.open .faq-a{max-height:220px;padding-bottom:16px}
 
-    .book-bar{background:var(--deep);color:var(--white);text-align:center}
-    .book-inner{max-width:600px;margin:0 auto;padding:52px 24px}
-    .book-inner h2{font-family:'Playfair Display',serif;font-weight:400;font-size:1.5rem;color:var(--white);margin-bottom:10px}
-    .book-inner p{color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:24px}
-
-    .footer{padding:24px;text-align:center;font-size:.7rem;color:var(--text-muted);border-top:1px solid var(--border)}
+.footer{padding:24px;text-align:center;font-size:.7rem;color:var(--text-muted);border-top:1px solid var(--border)}
     .footer a{color:var(--deep-light);text-decoration:none}
 
     .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--white);border-top:1px solid rgba(0,0,0,.08);padding:10px 16px}
@@ -152,6 +147,17 @@
       .season-grid .season-card:last-child{grid-column:1/-1}
       .sticky{display:block}.sec{padding:48px 20px}
     }
+    .email-signup{background:var(--warm-dark)}
+    .signup-inner{max-width:500px;margin:0 auto;padding:52px 24px;text-align:center}
+    .email-signup h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.5rem,2.8vw,1.95rem);color:var(--deep);line-height:1.15;letter-spacing:-.01em;margin-bottom:10px}
+    .signup-inner p{color:var(--text-mid);font-size:.9rem;margin-bottom:18px}
+    .signup-form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+    .signup-form input[type="email"]{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:6px;padding:12px 16px;font-size:.88rem;font-family:inherit;color:var(--text);width:240px;max-width:100%;outline:none}
+    .signup-form input[type="email"]:focus{border-color:var(--accent)}
+    .signup-form button{background:var(--accent);color:var(--white);border:none;border-radius:6px;padding:12px 20px;font-weight:600;font-size:.88rem;font-family:inherit;cursor:pointer;transition:background .15s,transform .1s;white-space:nowrap}
+    .signup-form button:hover{background:var(--accent-hover);transform:translateY(-1px)}
+    .signup-note{font-size:.72rem!important;color:var(--text-muted)!important;margin-top:12px!important;margin-bottom:0!important}
+    @media(max-width:600px){.signup-form{flex-direction:column;align-items:stretch;max-width:300px;margin-left:auto;margin-right:auto}.signup-form input[type="email"]{width:100%}}
     @media(max-width:480px){.am-grid{grid-template-columns:1fr 1fr;gap:6px}.sp{font-size:.74rem}}
   </style>
 </head>
@@ -344,12 +350,21 @@
     </div>
   </div></section>
 
-  <!-- BOOK BAR -->
-  <section class="book-bar" id="book">
-    <div class="book-inner">
-      <h2 class="serif">Book Your Stay</h2>
-      <p>Book direct with the owner — no platform fees.</p>
-      <a href="https://www.weneedavacation.com/Cape-Cod/Wellfleet-Vacation-Rental-39676/" target="_blank" class="cta-main" data-track="wnav-click">Check Availability on WNAV <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+  <!-- EMAIL SIGNUP -->
+  <section class="email-signup">
+    <div class="signup-inner">
+      <h2 class="serif">Stay in the loop.</h2>
+      <p>We'll let you know when new dates open up.</p>
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/wellfleetretreat"
+        method="post"
+        class="signup-form"
+      >
+        <input type="email" name="email" placeholder="Your email" required />
+        <input type="hidden" name="tag" value="homepage" />
+        <button type="submit">Notify me</button>
+      </form>
+      <p class="signup-note">A few emails per year. New dates, seasonal updates. No spam.</p>
     </div>
   </section>
 
@@ -405,6 +420,8 @@
     // TRACKING
     // GA4 click_to_wnav event — delegated, fires on any WNAV link
     document.addEventListener('click',function(e){var link=e.target.closest('[data-track="wnav-click"]');if(link&&typeof gtag==='function'){gtag('event','click_to_wnav',{event_category:'booking',event_label:window.location.pathname,value:1});}});
+    // Email signup — delegated, handles all .signup-form submissions
+    document.addEventListener('submit',function(e){var form=e.target.closest('.signup-form');if(!form)return;e.preventDefault();var email=form.querySelector('input[type="email"]').value;var tag=form.querySelector('input[name="tag"]')?form.querySelector('input[name="tag"]').value:'';var btn=form.querySelector('button');var originalText=btn.textContent;btn.textContent='Sending...';btn.disabled=true;fetch('https://buttondown.com/api/emails/embed-subscribe/wellfleetretreat',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'email='+encodeURIComponent(email)+'&tag='+encodeURIComponent(tag),mode:'no-cors'}).then(function(){btn.textContent='You\'re on the list!';form.querySelector('input[type="email"]').style.display='none';if(typeof gtag==='function'){gtag('event','email_signup',{event_category:'engagement',event_label:window.location.pathname});}}).catch(function(){btn.textContent=originalText;btn.disabled=false;});});
   </script>
 </body>
 </html>
